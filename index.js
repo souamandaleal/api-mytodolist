@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('teste oi')
+    res.send('ESTA EH A API DO MY TO DO LIST PARA A DISCPLINA GCC129')
 })
 
 router.post('/tarefas', tarefa_controller.cadastrarTarefa)
