@@ -45,8 +45,14 @@
             tarefa.descricao = req.body.descricao;
             terefa.prazo = req.body.prazo;
             tarefa.completa = req.body.completa;
+            
+            tarefa.save(function (err){
+                if (err) {
+                    return next(err) 
+             }
+            })
 
-            return res.json(tarefa)
+            return res.json("Tarefa alterada com sucesso!")
 
         })
 }
