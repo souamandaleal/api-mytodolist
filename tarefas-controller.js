@@ -39,20 +39,16 @@
     }
 
    exports.alterarTarefa = function (req, res) {
-    Tarefas.findById(req.params.id, function(err, tarefa){
-            if (err) return next(err)
+       Tarefas.findById(req.params.id, function(err, tarefa){
+            const { id } = req.params;
 
-            tarefa.descricao = req.body.descricao;
-            terefa.prazo = req.body.prazo;
-            tarefa.completa = req.body.completa;
-            
-            tarefa.save(function (err){
-                if (err) {
-                    return next(err) 
-             }
-            })
+            const { descricao, prazo, completa } = req.body;
 
-            return res.json("Tarefa alterada com sucesso!")
+            tarefa.descricao = descricao;
+            tarefa.prazo = prazo;
+            tarefa.completa = completa;
+       
+            return res.json(tarefa)
 
-        })
-}
+       })
+    }
