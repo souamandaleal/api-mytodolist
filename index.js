@@ -26,6 +26,8 @@ app.get('/', (req, res) => {
 router.post('/tarefas', tarefa_controller.cadastrarTarefa)
 router.get('/tarefas', tarefa_controller.listarTarefas)
 router.get('/tarefas/:id', tarefa_controller.buscarTarefa)
+router.delete('/tarefas/:id', tarefa_controller.deletarTarefa)
+router.put('/tarefas/:id', tarefa_controller.alterarTarefa)
 
 app.use('/', router)
 
